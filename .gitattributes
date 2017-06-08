@@ -1,5 +1,5 @@
 app/scripts/* linguist-vendored=false
-app/styles/* linguist-vendored
+app/styles/* linguist-vendored=false
 hooks/* linguist-vendored
 resources/* linguist-vendored
 test/* linguist-vendored
