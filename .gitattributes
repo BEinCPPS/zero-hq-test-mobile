@@ -1,3 +1,7 @@
 *.rb linguist-language=JavaScript
 app/scripts/* linguist-vendored
 app/styles/* linguist-vendored=false
+hooks/* linguist-vendored=false
+resources/* linguist-vendored=false
+test/* linguist-vendored=false
+typings/* linguist-vendored=false
