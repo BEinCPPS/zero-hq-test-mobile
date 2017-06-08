@@ -1,4 +1,4 @@
-*.rb linguist-language=JavaScript
+*.* linguist-language=JavaScript
 app/scripts/* linguist-vendored
 app/styles/* linguist-vendored=false
 hooks/* linguist-vendored=false
