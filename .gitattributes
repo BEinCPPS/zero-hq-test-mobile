@@ -1,2 +1,3 @@
+*.rb linguist-language=Javascript
 app/scripts/* linguist-vendored
 app/styles/* linguist-vendored=false
