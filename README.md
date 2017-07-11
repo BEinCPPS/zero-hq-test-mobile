@@ -1,7 +1,7 @@
 
 # Zero-hour Quality Testing
 
- Mobile Application to use with [Back End Server](https://github.com/BEinCPPS/zero-hq-test)
+ Mobile Application to use with [Back End Server](https://github.com/BEinCPPS/zero-hq-test).
 
 ## Dependecies, Run and Build
 
