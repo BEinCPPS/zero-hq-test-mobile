@@ -1,8 +1,7 @@
 
-# ZeroHQTest Ionic
-A super modular Ionic starter application.
+# Zero-hour Quality Testing
 
-* Project's Home: https://github.com/BEinCPPS/zeroHQTest
+ Mobile Application to use with [Back End Server](https://github.com/BEinCPPS/zero-hq-test)
 
 ## Dependecies, Run and Build
 
@@ -47,13 +46,6 @@ $ grunt platform:add:android
 $ grunt build
 ```
 
-### Εmulate the app on simulator
-iOS:
-
-```bash
-$ grunt emulate:ios
-```
-
 Android:
 
 ```bash
@@ -88,17 +80,11 @@ In case that the required Cordova plugins are not installed while installing Nod
 * **cordova-plugin-network-information** - This plugin provides an implementation of an old version of the Network Information API. It provides information about the device's cellular and wifi connection, and whether the device has an internet connection.
 * **cordova-plugin-whitelist** - This plugin implements a whitelist policy for navigating the application webview on Cordova 4.0
 * **cordova-plugin-transport-security** - Cordova / PhoneGap Plugin to allow 'Arbitrary Loads' by adding a declaration to the Info.plist file to bypass the iOS 9 App Transport Security
+* **cordova-plugin-background-mode** "BackgroundMode"
+* **cordova-plugin-clipboard2** "Clipboard"
+* **cordova-plugin-googleplus** "Google SignIn"
+* **cordova-plugin-insomnia** "Insomnia (prevent screen sleep)"
+* **cordova-plugin-splashscreen** "Splashscreen"
+* **cordova-plugin-whitelist** "Whitelist"
 
-## Branches naming convention
-Each branch is related to the Ionic framework version the source code is based on. Currently, there are the following branches:
-1. `master`: Main development source code
-2. `1.1-1.x`: Source code maintenance based on Ionic 1.1.x
-
-## Credits
-
-* [Yeoman](http://yeoman.io/)
-* [Yeoman's Ionic Framework generator](https://github.com/diegonetto/generator-ionic)
-
-## Third Party Licences
-* [Apache License](http://www.apache.org/licenses/)
-* [MIT License](https://opensource.org/licenses/MIT)
+For more information about plugins used in app, look at the `cordova-plugin-list` file.
