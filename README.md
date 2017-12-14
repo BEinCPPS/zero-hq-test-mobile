@@ -1,7 +1,7 @@
 
 # Zero-hour Quality Testing
 
-Mobile Application to use with [Back End Server](https://github.com/BEinCPPS/zero-hq-test).
+Mobile Application to use with [Back End Server](https://github.com/BEinCPPS/zero-hq-test).<br/>
 Modify your `hosts` file to map under `whr.beincpps.eu` your Back End Server **address**.
 
 ## Dependecies, Run and Build
