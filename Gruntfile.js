@@ -61,8 +61,8 @@ module.exports = function (grunt) {
                 constants: {
                     ENV: {
                         name: 'development',
-                        apiEndpointHost: 'localhost',
-                        apiEndpointHostMobile: '172.16.21.102', //10.0.3.2
+                        apiEndpointHost: 'whr.beincpps.eu',
+                        apiEndpointHostMobile: 'whr.beincpps.eu', //10.0.3.2
                         apiEndPointPort: '8080',
                         apiEndPointPortMobile: '8080',
                         apiEndPointDefaultProtocol: 'http',

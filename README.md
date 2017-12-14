@@ -1,7 +1,8 @@
 
 # Zero-hour Quality Testing
 
- Mobile Application to use with [Back End Server](https://github.com/BEinCPPS/zero-hq-test).
+Mobile Application to use with [Back End Server](https://github.com/BEinCPPS/zero-hq-test).
+Modify your `hosts` file to map under `whr.beincpps.eu` your Back End Server **address**.
 
 ## Dependecies, Run and Build
 
@@ -50,6 +51,11 @@ Android:
 
 ```bash
 $ grunt emulate:android
+```
+
+
+```bash
+$ grunt run:android
 ```
 
 For more information, see [Ionic Framework Generator's instructions](https://github.com/diegonetto/generator-ionic).
