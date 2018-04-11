@@ -40,6 +40,7 @@
             if (stateType === 'normal')  return 'icon ion-checkmark-circled green';
             else if (stateType === 'warning') return 'icon ion-android-warning orange';
             else if (stateType === 'error') return 'icon ion-android-alert red';
+            else return 'icon ion-checkmark-circled green';
 
         }
 

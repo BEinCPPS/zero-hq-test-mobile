@@ -4,7 +4,8 @@
   "private": true,
   "dependencies": {
     "@ionic-native/google-plus": "^3.6.1",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "cordova-ios": "^3.9.2"
   },
   "devDependencies": {
     "cordova": "^5.4.1",
@@ -88,5 +89,10 @@
     "cordova-plugin-transport-security",
     "cordova-plugin-whitelist",
     "cordova-plugin-inappbrowser"
-  ]
+  ],
+  "cordova": {
+    "platforms": [
+      "ios"
+    ]
+  }
 }
