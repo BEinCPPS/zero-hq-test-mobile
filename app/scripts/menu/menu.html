@@ -25,27 +25,35 @@
         </ion-header-bar>
         <ion-content>
             <ion-list>
-                <ion-item ng-if="user && user.fullName !== 'test'" nav-clear menu-close class="item-avatar" href="#">
+                <ion-item ng-if="!isWsConnected" nav-clear menu-close class="item-icon-left" href="#/app/login">
+                    <i class="icon ion-key"></i>
+                    Login
+                </ion-item>
+                <ion-item ng-if="isWsConnected && user && user.fullName !== 'operator'" nav-clear menu-close class="item-avatar" href="#">
                     <img src="{{user.imageUrl}}">
                     <p style="padding-top: 5px">{{user.givenName}}</p>
                 </ion-item>
-                <ion-item nav-clear menu-close class="item-icon-left" href="#/app/home">
+                <ion-item ng-if="isWsConnected" nav-clear menu-close class="item-icon-left" href="#/app/home">
                     <i class="icon ion-ios-home"></i>
                     Home
                 </ion-item>
-                <ion-item nav-clear menu-close class="item-icon-left" href="#/app/inbox">
+                <ion-item ng-if="isWsConnected" nav-clear menu-close class="item-icon-left" href="#/app/inbox">
                     <i class="icon ion-email-unread"></i>
                     Inbox
                 </ion-item>
-                <ion-item nav-clear menu-close class="item-icon-left" href="#/app/history">
+                <ion-item ng-if="isWsConnected" nav-clear menu-close class="item-icon-left" href="#/app/history">
                     <i class="icon ion-filing"></i>
                     History
                 </ion-item>
-                <ion-item nav-clear menu-close class="item-icon-left" href="#/app/dashboard">
+                <ion-item ng-if="isWsConnected" nav-clear menu-close class="item-icon-left" href="#/app/dashboard">
                     <i class="icon ion-pie-graph"></i>
                     Dashboard
                 </ion-item>
-                <ion-item nav-clear menu-close class="item-icon-left" href="#" ng-click="logout()">
+                <ion-item nav-clear menu-close class="item-icon-left" href="#/app/config">
+                    <i class="icon ion-gear-b"></i>
+                    Config
+                </ion-item>
+                <ion-item ng-if="isWsConnected" nav-clear menu-close class="item-icon-left" href="#" ng-click="logout()">
                     <i class="icon ion-android-exit"></i>
                     Logout
                 </ion-item>

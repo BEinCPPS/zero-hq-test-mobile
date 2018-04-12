@@ -48,12 +48,13 @@
                     }
                 );
 
-
-
-
             }
         }
 
+
+         $rootScope.$on('config-logout', function(event, args) {
+            $scope.logout();
+         });
 
         $scope.connect = function () {
             if ($rootScope.isWsConnected) return;

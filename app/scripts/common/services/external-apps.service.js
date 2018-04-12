@@ -5,11 +5,28 @@
         .module('zerohqt.common')
         .factory('externalAppsService', externalAppsService);
 
-    externalAppsService.$inject = ['$window', 'ENV', '$ionicLoading'];
+    externalAppsService.$inject = ['$rootScope', '$window', 'ENV', '$ionicLoading'];
 
     /* @ngInject */
-    function externalAppsService($window, ENV, $ionicLoading) {
+    function externalAppsService($rootScope, $window, ENV, $ionicLoading) {
         var sApp = null;
+         $rootScope.apiEndpointHost = ENV.apiEndpointHost;
+         $rootScope.apiEndpointHostMobile = ENV.apiEndpointHostMobile;
+         $rootScope.apiEndPointPort = ENV.apiEndPointPort;
+         $rootScope.apiEndPointPortMobile = ENV.apiEndPointPortMobile;
+
+        var serverStorageJSON =  $window.localStorage.getItem("server");
+        var serverStorage = null;
+        if(typeof serverStorageJSON != 'undefined')
+                serverStorage = JSON.parse(serverStorageJSON);
+        if(typeof serverStorage !== 'undefined' && serverStorage != null
+                && serverStorage.serverName && serverStorage.serverPort) {
+            $rootScope.apiEndpointHost = serverStorage.serverName;
+            $rootScope.apiEndpointHostMobile = serverStorage.serverName;
+            $rootScope.apiEndPointPort = serverStorage.serverPort;
+            $rootScope.apiEndPointPortMobile = serverStorage.serverPort;
+        }
+
         if (typeof startApp !== 'undefined' && startApp !== null) {
 
         }
@@ -18,11 +35,19 @@
             openExternalUrl: openExternalUrl,
             getBackEndUrl: getBackEndUrl,
             getWebSocketUrl: getWebSocketUrl,
+            setServerCoordinates:setServerCoordinates,
             openVnc: openVncApp
         };
         return service;
 
         // ******************************************************
+
+        function setServerCoordinates(serverName, serverPort){
+            $rootScope.apiEndpointHost = serverName;
+            $rootScope.apiEndpointHostMobile = serverName;
+            $rootScope.apiEndPointPort = serverPort;
+            $rootScope.apiEndPointPortMobile = serverPort;
+         }
 
         function openMapsApp(coords) {
             var q;
@@ -41,19 +66,19 @@
 
         function getBackEndUrl() {
             if (ionic.Platform.isAndroid()) {
-                console.log(ENV.apiEndpointHostMobile);
-                return ENV.apiEndPointDefaultProtocol + '://' + ENV.apiEndpointHostMobile + ':' + ENV.apiEndPointPortMobile + '/';
+                console.log($rootScope.apiEndpointHostMobile);
+                return ENV.apiEndPointDefaultProtocol + '://' + $rootScope.apiEndpointHostMobile + ':' + $rootScope.apiEndPointPortMobile + '/';
             } else {
-                console.log(ENV.apiEndpointHost);
-                return ENV.apiEndPointDefaultProtocol + '://' + ENV.apiEndpointHost + ':' + ENV.apiEndPointPort + '/';
+                console.log($rootScope.apiEndpointHost);
+                return ENV.apiEndPointDefaultProtocol + '://' + $rootScope.apiEndpointHost + ':' + $rootScope.apiEndPointPort + '/';
             }
         }
 
         function getWebSocketUrl() {
             if (ionic.Platform.isAndroid()) {
-                return 'ws://' + ENV.apiEndpointHostMobile + ':' + ENV.apiEndPointPortMobile + '/websocket';
+                return 'ws://' + $rootScope.apiEndpointHostMobile + ':' + $rootScope.apiEndPointPortMobile + '/websocket';
             } else {
-                return 'ws://' + ENV.apiEndpointHost + ':' + ENV.apiEndPointPort + '/websocket';
+                return 'ws://' + $rootScope.apiEndpointHost + ':' + $rootScope.apiEndPointPort + '/websocket';
             }
         }
 

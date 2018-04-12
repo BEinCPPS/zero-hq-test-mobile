@@ -1,0 +1,20 @@
+<ion-view view-title="Config">
+    <ion-content class="scroll-content has-footer" overflow-scroll="true">
+        <div class="list list-inset">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Server Address</span>
+                <input type="text" placeholder="" ng-model="server.serverName"/>
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Server Port</span>
+                <input type="text" size="6" maxlength="6" placeholder="" ng-model="server.serverPort"/>
+            </label>
+        </div>
+        <button class="button button-block button-positive" ng-click="save()">
+            Save
+        </button>
+    </ion-content>
+</ion-view>
+
+
+

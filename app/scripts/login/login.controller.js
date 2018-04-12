@@ -19,6 +19,7 @@
     }
 
     function LoginController($scope, $rootScope, loginService, $state, $ionicLoading, $ionicHistory, ENV, websocketService, insomniaService) {
+
         $scope.login = function () {
             //This check is needed to test in browser env
             $ionicHistory.nextViewOptions({
@@ -27,12 +28,12 @@
             });
             if ((typeof window.plugins === 'undefined' && !ionic.Platform.isAndroid()) || ENV.mockSignin) {
                 $rootScope.user = {
-                    uid: '0000000',
-                    fullName: 'test',
-                    email: 'test@mail.com'
+                    uid: '0000001',
+                    fullName: 'operator',
+                    email: 'operator@whirlpool.com'
                 };
                 loginService.logUserAccess($rootScope.user).then(function (req) {
-                    console.log(req);
+                    //console.log(req);
                     insomniaService.keepAwake();
                     $scope.connect();
                     return $state.go('app.home');
@@ -65,7 +66,7 @@
                          */
                         if (userData)
                             loginService.logUserAccess(createUserAccess(userData)).then(function (req) {
-                                console.log(req);
+                                //console.log(req);
                                 localStorage.setItem('token', userData.accessToken);
                                 insomniaService.keepAwake();
                                 $scope.connect();
@@ -87,6 +88,11 @@
                 );
             }
         }
+
+
+         $rootScope.$on('config-login', function(event, args) {
+            $scope.login();
+         });
 
 
         $scope.connect = function () {

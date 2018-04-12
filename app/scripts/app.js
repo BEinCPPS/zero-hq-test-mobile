@@ -17,6 +17,7 @@ angular.module('starter', [
     'zerohqt.history',
     'zerohqt.login',
     'zerohqt.dashboard',
+    'zerohqt.config',
     'ngCordova',
     'hideBack',
 ])
